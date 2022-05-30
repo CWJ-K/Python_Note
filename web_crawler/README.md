@@ -42,3 +42,6 @@
 ## Package: request
 
 res.json().get("aaData", "") => crawler_tpex
+
+if status code is less than 400
+    request.get().ok
