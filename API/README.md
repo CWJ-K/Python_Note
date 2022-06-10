@@ -1,5 +1,6 @@
 <!-- omit in toc -->
 # Introduction
+Take note of Python API
 
 <br />
 

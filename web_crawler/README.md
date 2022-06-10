@@ -46,5 +46,10 @@ res.json().get("aaData", "") => crawler_tpex
 if status code is less than 400
     request.get().ok
 
+
+### revise encoding
+        response.content.decode
+
+
 ### urlretrieve
 Copy a network object denoted by a URL to a local file.
