@@ -1,6 +1,9 @@
 class.__dict__
 func.__name__
 
+.module
+module
+
 can not import module
 # PATH
 https://carsonwah.github.io/15213187969322.html
