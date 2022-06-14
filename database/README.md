@@ -2,7 +2,6 @@
 # Introduction
 Take note of database
 
-
 <br />
 
 <!-- omit in toc -->
@@ -19,6 +18,7 @@ Take note of database
 - [Commands](#commands)
   - [sqlalchemy.engine.base.Engine](#sqlalchemyenginebaseengine)
   - [sqlalchemy.engine.base.Connection](#sqlalchemyenginebaseconnection)
+  - [Mock sqlalchemy connection failed](#mock-sqlalchemy-connection-failed)
 
 <br />
 
@@ -73,3 +73,9 @@ Take note of database
     * When the connection is closed at the end of the with, the referenced DBAPI connection is **released** to the connection pool. It does not mean the connection is removed, but the pool **stores** the connection for the next use
   
       * the pooling mechanism will ```rollback()``` the transaction
+
+## Mock sqlalchemy connection failed
+
+    conn = engineer.connect()
+    conn = conn.invalidate()
+
