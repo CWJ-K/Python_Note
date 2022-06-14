@@ -12,6 +12,8 @@ Take note of database
   - [roll back transactions](#roll-back-transactions)
 - [Packages](#packages)
   - [sqlalchemy](#sqlalchemy)
+    - [Connection.execution_options()](#connectionexecution_options)
+      - [autocommit](#autocommit)
   - [Structure](#structure)
     - [Dialect](#dialect)
     - [Pool/Connection Pooling](#poolconnection-pooling)
@@ -38,6 +40,16 @@ Take note of database
 ## sqlalchemy
 * Python SQL toolkit for efficient and high-performing database access
 * support ORM (object-relational mapper)
+
+### Connection.execution_options()
+* defines the given execution options which will take effect for a call to execute()
+#### autocommit
+> Deprecated since version 1.4
+* default = True: issue a commit after an execution
+* full control autocommit through Connection.execution_options()
+* if autocommit=False,  maintain Transactions state manually by calling session.commit() and session.rollback() 
+  > to control transaction boundaries
+
 
 <br />
 
