@@ -16,6 +16,9 @@ Take note of Pytest
   - [run pytest](#run-pytest)
   - [check configurations in pytest.ini](#check-configurations-in-pytestini)
   - [mocker](#mocker)
+  - [fast api](#fast-api)
+  - [test too slow](#test-too-slow)
+  - [log in pytest](#log-in-pytest)
 
 <br />
 
@@ -63,4 +66,14 @@ Take note of Pytest
 
 
 
-    
+
+
+## fast api
+https://fastapi.tiangolo.com/tutorial/testing/
+
+
+## test too slow
+https://stackoverflow.com/questions/3824762/how-slow-is-too-slow-for-unit-tests
+
+## [log in pytest](https://stackoverflow.com/questions/4673373/logging-within-pytest-tests)
+pytest -o log_cli=true
