@@ -11,6 +11,7 @@ Take note of methods to read files
 - [Package](#package)
   - [io (input/output)](#io-inputoutput)
     - [StringIO](#stringio)
+- [seek](#seek)
 
 <br />
 
@@ -40,3 +41,7 @@ Take note of methods to read files
             io.StringIO(response.content.decode("big5")),
             index_col=False
         )
+
+
+# seek
+https://stackoverflow.com/questions/26879981/writing-then-reading-in-memory-bytes-bytesio-gives-a-blank-result
