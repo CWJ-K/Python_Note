@@ -10,6 +10,7 @@ Take note of some tips to solve problems.
 - [join](#join)
 - [how to write converters to translate variables](#how-to-write-converters-to-translate-variables)
 - [check if the type of variable is the same as a specific type](#check-if-the-type-of-variable-is-the-same-as-a-specific-type)
+- [double kwargs at the same time](#double-kwargs-at-the-same-time)
 
 # Customize string format by two variables
 
@@ -81,3 +82,8 @@ Take note of some tips to solve problems.
 ```python
     isinstance(sql, list)
 ```
+
+# double kwargs at the same time
+response = session.get(
+            url, params={**params, **{"offset": offset, "limit": batch_size}}
+        )

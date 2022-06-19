@@ -9,11 +9,13 @@ Take note of how to crawler websites
 - [Fundamental Concepts](#fundamental-concepts)
   - [Chrome - DevTools](#chrome---devtools)
   - [Website](#website)
+  - [web offset](#web-offset)
 - [Packages](#packages)
   - [request](#request)
 - [Commands](#commands)
     - [revise encoding](#revise-encoding)
     - [urlretrieve](#urlretrieve)
+    - [session vs get](#session-vs-get)
 
 <br />
 
@@ -59,6 +61,13 @@ Take note of how to crawler websites
 
 <br />
 
+## web offset 
+* a form of offset printing in which a continuous roll of paper is fed through the printing press
+* e.g. offset = 100: get next set of 100 records
+
+
+<br />
+
 # Packages
 ## request
 
@@ -72,10 +81,22 @@ Take note of how to crawler websites
     if status code is less than 400
         request.get().ok
 
+    response.raise_for_status()
 
 ### revise encoding
     response.content.decode
 
 
+
 ### urlretrieve
 * Copy a network object denoted by a URL to a local file.
+
+### [session vs get](https://stackoverflow.com/questions/65575601/python-requests-get-vs-session-get)
+* session:
+  * requires persistent cookies
+  * performance increase: speed up multiple requests to the same host
+  
+* get
+  * only want to fetch a single Item
+  * no need cookies to be persistent
+  * no need to login

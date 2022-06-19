@@ -34,4 +34,27 @@ https://www.initialyze.com/blog/2020/11/what-are-dynamic-imports-and-how-to-use-
 
 
 
-# **_ in function
+# * 
+    * (single asterisk) and ** (double asterisks)
+* *args
+  attach a variable-length number of arguments
+  
+* **kwargs
+  * pass a keyworded variable length of arguments to a function
+        func(**{'type':'Event'}) = func(type='Event')
+  * unpack the dict elements 
+        **{'type':'Event'} = type='Event'
+
+* **_
+  * _ is just a variable like any other, but by convention it means that you don't intend to use that value, just declare and forget it.
+  * e.g.
+        # before **_ is key-value arguments, so ** is used
+        def _fetch_ratings(templates_dict, batch_size=1000, **_)
+
+# underline
+
+https://medium.com/python-language/python-tricks-%E5%BA%95%E7%B7%9A%E5%AE%B6%E6%97%8F%E7%9A%84%E7%A7%98%E5%AF%86-d84a2ce9cde6
+
+
+# yield
+https://zh-blog.logan.tw/2019/03/30/python3-intro-to-yield-from-expr/
