@@ -13,6 +13,7 @@ Take note of path
   - [Instantiate the current directory as a Path](#instantiate-the-current-directory-as-a-path)
   - [glob](#glob)
   - [mkdir](#mkdir)
+  - [os.path.join(os.path.dirname(__file__), "..", "dags/**.py")](#ospathjoinospathdirnamefile--dagspy)
 
 <br />
 
@@ -37,3 +38,7 @@ Take note of path
 
 ## mkdir
     p.mkdir(mode=0o777, parents=False, exist_ok=False)
+
+
+## os.path.join(os.path.dirname(__file__), "..", "dags/**.py")
+https://github.com/dokelung/Python-QA/blob/master/questions/standard_lib/Python%20%E7%8D%B2%E5%8F%96%E6%96%87%E4%BB%B6%E8%B7%AF%E5%BE%91%E5%8F%8A%E6%96%87%E4%BB%B6%E7%9B%AE%E9%8C%84(__file__%20%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95).md

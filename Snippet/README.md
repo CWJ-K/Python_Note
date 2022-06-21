@@ -11,6 +11,9 @@ Take note of some tips to solve problems.
 - [how to write converters to translate variables](#how-to-write-converters-to-translate-variables)
 - [check if the type of variable is the same as a specific type](#check-if-the-type-of-variable-is-the-same-as-a-specific-type)
 - [double kwargs at the same time](#double-kwargs-at-the-same-time)
+- [use two pointers and avoid stopping at the first case - all equal to zero](#use-two-pointers-and-avoid-stopping-at-the-first-case---all-equal-to-zero)
+- [Connection](#connection)
+  - [make sure connections are closed even if error occurs](#make-sure-connections-are-closed-even-if-error-occurs)
 
 # Customize string format by two variables
 
@@ -87,3 +90,17 @@ Take note of some tips to solve problems.
 response = session.get(
             url, params={**params, **{"offset": offset, "limit": batch_size}}
         )
+
+# use two pointers and avoid stopping at the first case - all equal to zero 
+```python
+    # total, offset are all integers
+        offset = 0
+        total = None
+        while total is None or offset < total:  
+            offset += batch_size
+            total = response_json['total']
+
+```
+
+# Connection
+## make sure connections are closed even if error occurs

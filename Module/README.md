@@ -58,3 +58,30 @@ https://medium.com/python-language/python-tricks-%E5%BA%95%E7%B7%9A%E5%AE%B6%E6%
 
 # yield
 https://zh-blog.logan.tw/2019/03/30/python3-intro-to-yield-from-expr/
+
+
+
+
+# wrapper
+[@apply_defaults](https://airflow.apache.org/docs/apache-airflow/stable/_modules/airflow/models/baseoperator.html#BaseOperator)
+  @functools.wraps(func)
+
+
+
+# [inheritance from class](https://stackoverflow.com/a/27134600)
+```python
+class ChildA(Base):
+    def __init__(self):
+        Base.__init__(self)
+        
+class ChildB(Base):
+    def __init__(self):
+        super(ChildB, self).__init__()
+```
+* super().__init__() = super(ChildB, self).__init__()
+  > Python2, inheritance is required like `super(ChildB, self).__init__()`
+
+* Base.__init__(self) is not recommended
+  >  can not use multiple inheritance since the next parent's call is hard coded
+
+
