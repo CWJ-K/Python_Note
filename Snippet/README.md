@@ -13,7 +13,9 @@ Take note of some tips to solve problems.
 - [double kwargs at the same time](#double-kwargs-at-the-same-time)
 - [use two pointers and avoid stopping at the first case - all equal to zero](#use-two-pointers-and-avoid-stopping-at-the-first-case---all-equal-to-zero)
 - [Connection](#connection)
-  - [make sure connections are closed even if error occurs](#make-sure-connections-are-closed-even-if-error-occurs)
+  - [1. make sure connections are closed even if error occurs](#1-make-sure-connections-are-closed-even-if-error-occurs)
+- [Pandas](#pandas)
+- [new columns from aggregation can be used by loc at the same time via referencing data as df](#new-columns-from-aggregation-can-be-used-by-loc-at-the-same-time-via-referencing-data-as-df)
 
 # Customize string format by two variables
 
@@ -103,4 +105,20 @@ response = session.get(
 ```
 
 # Connection
-## make sure connections are closed even if error occurs
+
+## 1. make sure connections are closed even if error occurs
+
+
+# Pandas
+# new columns from aggregation can be used by loc at the same time via referencing data as df
+```python
+ranking = (
+        ratings.groupby("movieId")
+        .agg(
+            avg_rating=pd.NamedAgg(column="rating", aggfunc="mean"),
+            num_ratings=pd.NamedAgg(column="userId", aggfunc="nunique"),
+        )
+        .loc[lambda df: df["num_ratings"] > min_ratings]
+        .sort_values(["avg_rating", "num_ratings"], ascending=False)
+    )
+```
