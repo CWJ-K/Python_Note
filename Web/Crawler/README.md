@@ -1,26 +1,32 @@
 <!-- omit in toc -->
+
 # Introduction
 Take note of how to crawler websites
 
 <br />
 
 <!-- omit in toc -->
+
 # Table of Contents
+- [Introduction](#introduction)
+- [Table of Contents](#table-of-contents)
 - [Fundamental Concepts](#fundamental-concepts)
-  - [Chrome - DevTools](#chrome---devtools)
-  - [Website](#website)
-  - [web offset](#web-offset)
+  - [1. Chrome - DevTools](#1-chrome---devtools)
+  - [2. Website](#2-website)
+  - [3. web offset](#3-web-offset)
 - [Packages](#packages)
-  - [request](#request)
+  - [1. request](#1-request)
 - [Commands](#commands)
-    - [revise encoding](#revise-encoding)
-    - [urlretrieve](#urlretrieve)
-    - [session vs get](#session-vs-get)
+    - [1. revise encoding](#1-revise-encoding)
+    - [2. urlretrieve](#2-urlretrieve)
+    - [3. session vs get](#3-session-vs-get)
+- [Questions](#questions)
 
 <br />
 
 # Fundamental Concepts
-## Chrome - DevTools 
+
+## 1. Chrome - DevTools 
 *  If a website uses POST, try to find an option "print to HTML" and see its URL
 
 * Network
@@ -50,7 +56,7 @@ Take note of how to crawler websites
 
 <br />
 
-## Website
+## 2. Website
 |Comparison| GET | POST |
 |:---:| :---: | :---: |
 |Meaning|view something|change something|
@@ -61,7 +67,7 @@ Take note of how to crawler websites
 
 <br />
 
-## web offset 
+## 3. web offset 
 * a form of offset printing in which a continuous roll of paper is fed through the printing press
 * e.g. offset = 100: get next set of 100 records
 
@@ -69,7 +75,8 @@ Take note of how to crawler websites
 <br />
 
 # Packages
-## request
+
+## 1. request
 
 
 
@@ -83,20 +90,24 @@ Take note of how to crawler websites
 
     response.raise_for_status()
 
-### revise encoding
+### 1. revise encoding
     response.content.decode
 
 
 
-### urlretrieve
+### 2. urlretrieve
 * Copy a network object denoted by a URL to a local file.
 
-### [session vs get](https://stackoverflow.com/questions/65575601/python-requests-get-vs-session-get)
+### 3. [session vs get](https://stackoverflow.com/questions/65575601/python-requests-get-vs-session-get)
 * session:
   * requires persistent cookies
   * performance increase: speed up multiple requests to the same host
   
 * get
   * only want to fetch a single Item
-  * no need cookies to be persistent
+  * no need for cookies to be persistent
   * no need to login
+
+# Questions
+1. When to use beautiful soup
+2. record steps of different types of files/websites
