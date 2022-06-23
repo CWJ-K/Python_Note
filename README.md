@@ -5,10 +5,10 @@
 - [Structure of this Repository](#structure-of-this-repository)
 - [Writing Conventions](#writing-conventions)
   - [1. Copy the Template Structure to Markdown](#1-copy-the-template-structure-to-markdown)
+  - [2. Ensure to Keep Capital of Directories in Git](#2-ensure-to-keep-capital-of-directories-in-git)
 
 <br />
 
-<!-- omit in toc -->
 
 # Introduction
 
@@ -89,5 +89,11 @@ docker-compose.yml creates jupyter notebook for code practice.
 # Commands 
 
 ```
+
+## 2. Ensure to Keep Capital of Directories in Git
+```
+git config core.ignorecase false
+```
+
 
 
