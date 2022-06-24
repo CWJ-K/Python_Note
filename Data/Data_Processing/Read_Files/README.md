@@ -12,6 +12,7 @@ Take note of methods to read files
   - [io (input/output)](#io-inputoutput)
     - [StringIO](#stringio)
 - [seek](#seek)
+- [why use bytesio](#why-use-bytesio)
 
 <br />
 
@@ -45,3 +46,11 @@ Take note of methods to read files
 
 # seek
 https://stackoverflow.com/questions/26879981/writing-then-reading-in-memory-bytes-bytesio-gives-a-blank-result
+
+
+
+
+# why use bytesio
+https://www.confessionsofadataguy.com/you-have-to-try-this-from-io-import-stringio-bytesio/
+
+also binary data has good performance

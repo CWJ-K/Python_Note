@@ -16,6 +16,7 @@ Take note of some tips to solve problems.
   - [1. make sure connections are closed even if error occurs](#1-make-sure-connections-are-closed-even-if-error-occurs)
 - [Pandas](#pandas)
 - [new columns from aggregation can be used by loc at the same time via referencing data as df](#new-columns-from-aggregation-can-be-used-by-loc-at-the-same-time-via-referencing-data-as-df)
+- [Callable as arguments in functions/class](#callable-as-arguments-in-functionsclass)
 
 # Customize string format by two variables
 
@@ -121,4 +122,12 @@ ranking = (
         .loc[lambda df: df["num_ratings"] > min_ratings]
         .sort_values(["avg_rating", "num_ratings"], ascending=False)
     )
+```
+
+# Callable as arguments in functions/class
+> from Airflow Example
+
+```python
+    self._pandas_read_callable = pd.read_csv
+    self._pandas_read_callable(obj, **self._read_callable_kwargs)
 ```

@@ -19,6 +19,7 @@ Take note of Python API
     - [create an instance of this class](#create-an-instance-of-this-class)
     - [to register a view function for a given URL rule](#to-register-a-view-function-for-a-given-url-rule)
     - [run the flask application](#run-the-flask-application)
+- [Flask Issue: cannot import name 'escape' from 'jinja2'](#flask-issue-cannot-import-name-escape-from-jinja2)
 
 
 <br />
@@ -87,3 +88,11 @@ Runs the application on a **local development server**.
         app.run(host='0.0.0.0', port=8888)
 
   *  0.0.0.0 <br /> all IPv4 addresses on the local machine. This ensures that the server will be reachable from all addresses
+
+
+# Flask Issue: cannot import name 'escape' from 'jinja2'
+> Flask 1.X.X uses jinja with escape module. However, new version of jinja2 does not support escape. Therefore, update the version of Flask where jinja does not use escape module 
+
+``` linux
+  Flask==2.1.0
+```
