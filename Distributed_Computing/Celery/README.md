@@ -60,3 +60,8 @@ graph LR;
         >>8
         res.parent.parent.get()
         >>4
+
+
+# Reference
+
+https://stackoverflow.com/questions/10260925/how-to-set-up-celery-workers-on-separate-machines
