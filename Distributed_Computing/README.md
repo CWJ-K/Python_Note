@@ -2,16 +2,18 @@
 # Table of Contents
 - [Introduction](#introduction)
 - [Fundamental Concepts](#fundamental-concepts)
-  - [Networks](#networks)
+  - [1. Networks](#1-networks)
+  - [2. asynchronously](#2-asynchronously)
+  - [3. synchronously](#3-synchronously)
 - [What is Parallel Computing?](#what-is-parallel-computing)
-  - [Parallel Applications](#parallel-applications)
-    - [Multithread Programming](#multithread-programming)
-    - [Multiprocessing](#multiprocessing)
-  - [Advantages of Parallel Computing](#advantages-of-parallel-computing)
-  - [Disadvantages of Parallel Computing](#disadvantages-of-parallel-computing)
+  - [1. Parallel Applications](#1-parallel-applications)
+    - [1.1. Multithread Programming](#11-multithread-programming)
+    - [1.2. Multiprocessing](#12-multiprocessing)
+  - [2. Advantages of Parallel Computing](#2-advantages-of-parallel-computing)
+  - [3. Disadvantages of Parallel Computing](#3-disadvantages-of-parallel-computing)
 - [What is Distributed Computing?](#what-is-distributed-computing)
-  - [Advantages of Distributed Computing](#advantages-of-distributed-computing)
-  - [The Biggest Challenge of Distributed Computing](#the-biggest-challenge-of-distributed-computing)
+  - [1. Advantages of Distributed Computing](#1-advantages-of-distributed-computing)
+  - [2. The Biggest Challenge of Distributed Computing](#2-the-biggest-challenge-of-distributed-computing)
 - [Differences Between Parallel and Distributed Computing](#differences-between-parallel-and-distributed-computing)
 - [Amdahl's law](#amdahls-law)
 - [Structure of this directory](#structure-of-this-directory)
@@ -28,10 +30,21 @@ This directory takes references from [Distributed Computing with Python: Harness
 <br />
 
 # Fundamental Concepts
-## Networks
+
+## 1. Networks
 * Local Area Network (LAN): networks machines are located in the same office/building
 * Wide Area Networking (WAN): networks machines are located across different buildings and cities.
 * Graphics Processing Unit (GPU)
+
+<br />
+
+## 2. asynchronously 
+no need to wait for a task to be done. Instead, you can do other things while waiting for the task to be done.
+
+<br />
+
+## 3. synchronously 
+need to wait for a task to be finished and then you can do other things 
 
 <br />
 
@@ -40,19 +53,20 @@ This directory takes references from [Distributed Computing with Python: Harness
 
 <br />
 
-## Parallel Applications
-### Multithread Programming
+## 1. Parallel Applications
+
+### 1.1. Multithread Programming
 * **Threads** are the typical tools used in parallel techniques, however, they have some limitations
 * an example of shared-memory architecture
   
 <br />
 
-### Multiprocessing
+### 1.2. Multiprocessing
 * an example of distributed memory architecture
 
 <br />
 
-## Advantages of Parallel Computing
+## 2. Advantages of Parallel Computing
 1. Improve Performance: break up a task into small parts and execute the small parts in the same amount of time, which enables to speed up the execution time of the task
 2. Provide responsive interfaces
     * updating the conditions of the thread requires another task
@@ -62,7 +76,7 @@ This directory takes references from [Distributed Computing with Python: Harness
 
 <br />
 
-## Disadvantages of Parallel Computing
+## 3. Disadvantages of Parallel Computing
 1. in shared-memory systems, multiple treads at the same time may lead to any changes in an unexpected order
 
 <br />
@@ -72,7 +86,7 @@ This directory takes references from [Distributed Computing with Python: Harness
 
 <br />
 
-## Advantages of Distributed Computing
+## 1. Advantages of Distributed Computing
 1. enable to solve problems that no individual can handle
 2. enable to solve problems that are not solved in a reasonable amount of time
 3. distributed memory systems are salable and cheap to assemble
@@ -80,7 +94,7 @@ This directory takes references from [Distributed Computing with Python: Harness
 
 <br />
 
-## The Biggest Challenge of Distributed Computing
+## 2. The Biggest Challenge of Distributed Computing
 * Not about CPU, but **data** - how to share data across different machines? 
 
 <br />
