@@ -1,146 +1,201 @@
 <!-- omit in toc -->
 # Introduction
-To write log messages to journal
+Write log messages in journal.
 
 <br />
 
 <!-- omit in toc -->
 # Table of Contents
 - [Fundamental Concepts](#fundamental-concepts)
-  - [Log Levels](#log-levels)
+  - [1. Log Levels](#1-log-levels)
 - [Packages](#packages)
-  - [logging](#logging)
-    - [StreamHandler](#streamhandler)
-    - [FileHandler](#filehandler)
-  - [Loguru](#loguru)
+  - [1. logging](#1-logging)
+    - [1.1. StreamHandler](#11-streamhandler)
+    - [1.2. FileHandler](#12-filehandler)
+  - [2. Loguru](#2-loguru)
 - [Commands](#commands)
-  - [logging](#logging-1)
-    - [Basic Usage](#basic-usage)
-    - [Advanced Usage: use logger to create different frameworks for logging](#advanced-usage-use-logger-to-create-different-frameworks-for-logging)
-      - [instantiate logger](#instantiate-logger)
-      - [set the threshold for this logger to level](#set-the-threshold-for-this-logger-to-level)
-      - [send logs to destinations based on handlers](#send-logs-to-destinations-based-on-handlers)
-      - [Example](#example)
-      - [Format](#format)
-  - [Loguru](#loguru-1)
-    - [Basic usage](#basic-usage-1)
-    - [Advanced usage](#advanced-usage)
-      - [use add to do logging handler, formatter, filter](#use-add-to-do-logging-handler-formatter-filter)
-      - [remove handler](#remove-handler)
+  - [1. logging](#1-logging-1)
+    - [1.1. Basic Usage](#11-basic-usage)
+    - [1.2. Advanced Usage: use logger to create different frameworks for logging](#12-advanced-usage-use-logger-to-create-different-frameworks-for-logging)
+      - [1.2.1. instantiate logger](#121-instantiate-logger)
+      - [1.2.2. set the threshold for this logger to level](#122-set-the-threshold-for-this-logger-to-level)
+      - [1.2.3. send logs to destinations based on handlers](#123-send-logs-to-destinations-based-on-handlers)
+      - [1.2.4. Example](#124-example)
+      - [1.2.5. Format](#125-format)
+  - [2. Loguru](#2-loguru-1)
+    - [2.1. Basic usage](#21-basic-usage)
+    - [2.2. Advanced usage](#22-advanced-usage)
+      - [2.2.1. use add to do logging handler, formatter, filter](#221-use-add-to-do-logging-handler-formatter-filter)
+      - [2.2.2. remove handler](#222-remove-handler)
+
+<br />
 
 # Fundamental Concepts
 
-## Log Levels
-
+## 1. Log Levels
 * debug
 * info
 * warning: default
 * error
 * critical
 
+<br />
 
 # Packages
-## logging
-### StreamHandler
+
+## 1. logging
+
+### 1.1. StreamHandler
 * sends logging output to streams such as sys.stdout, sys.stderr or any file-like object
 
-### FileHandler
+<br />
+
+### 1.2. FileHandler
 * sends logging output to a disk file
 * inherits the output functionality from **StreamHandler**
 
+<br />
 
-## Loguru
+## 2. Loguru
 * Loguru is much easier than logging
 
+<br />
+
 # Commands
-## logging
 
-### Basic Usage
+<br />
 
-    logging.info('info message')
-    logging.debug('debug message')
+## 1. logging
 
-### Advanced Usage: use logger to create different frameworks for logging
-#### instantiate logger
+### 1.1. Basic Usage
 
-    logging.getLogger(name) 
+  ```python
+  logging.info('info message')
+  logging.debug('debug message')
 
-#### set the threshold for this logger to level
+  ```
 
-    logger.setLevel(logging.DEBUG)
+<br />
 
-#### send logs to destinations based on handlers
+### 1.2. Advanced Usage: use logger to create different frameworks for logging
 
-    logger.addHandler(st)
+#### 1.2.1. instantiate logger
 
-#### Example
+  ```python
+  logging.getLogger(name) 
+  ```
+
+<br />
+
+#### 1.2.2. set the threshold for this logger to level
+
+  ```python
+  logger.setLevel(logging.DEBUG)
+  ```
+
+<br />
+
+#### 1.2.3. send logs to destinations based on handlers
+
+  ```python
+  logger.addHandler(st)
+  ```
+
+<br />
+
+#### 1.2.4. Example
 * Customize a logger 1
 
-    formatter_1 = logging.Formatter(
-        '[%(levelname)1.1s %(asctime)s %(module)s:%(lineno)d] %(message)s',
-        datefmt='%Y%m%d %H:%M:%S'
-    )
-    log_1 = logging.getLogger('test1')
-    log_1.setLevel(logging.DEBUG)
-    log_1.setFormatter(formatter_1)
+  ```python
+  formatter_1 = logging.Formatter(
+      '[%(levelname)1.1s %(asctime)s %(module)s:%(lineno)d] %(message)s',
+      datefmt='%Y%m%d %H:%M:%S'
+  )
+  log_1 = logging.getLogger('test1')
+  log_1.setLevel(logging.DEBUG)
+  log_1.setFormatter(formatter_1)
+  ```
 
 * Customize a logger 2
 
-    formatter_2 = logging.Formatter(
-        '[%(levelname)1.1s %(asctime)s %(module)s:%(lineno)d] %(message)s',
-        datefmt='%Y%m%d %H:%M:%S'
-    )
-    log_2 = logging.getLogger('test2')
-    log_2.setLevel(logging.DEBUG)
-    log_2.setFormatter(formatter_2)
+  ```python
+  formatter_2 = logging.Formatter(
+      '[%(levelname)1.1s %(asctime)s %(module)s:%(lineno)d] %(message)s',
+      datefmt='%Y%m%d %H:%M:%S'
+  )
+  log_2 = logging.getLogger('test2')
+  log_2.setLevel(logging.DEBUG)
+  log_2.setFormatter(formatter_2)
+  ```
 
 * Customize handlers for terminal and files
 
   * StreamHandler
 
+    ```python
     st = logging.StreamHandler()
     st.setLevel(logging.CRITICAL)
     st.setFormatter(formatter1)
+    ```
 
   * FileHandler
 
+    ```python
     log_filename = datetime.datetime.now().strftime("%Y-%m-%d_%H_%M_%S.log")
     fl = logging.FileHandler(log_filename)
     fl.setLevel(logging.CRITICAL)
     fl.setFormatter(formatter1)
+    ```
 
 * add handler to logger. if call logger, logger will send logs to destination
 
-    log_1.addHandler(st)
-    log_1.addHandler(fl)
-    log_2.addHandler(st)
+  ```python
+  log_1.addHandler(st)
+  log_1.addHandler(fl)
+  log_2.addHandler(st)
+  ```
     
 * print logs 
 
-    if __name__ == "__main__":
-        log_1.critical('hi')
-        log_1.critical('hello')
-        log_1.critical('ao')
-        log_2.critical('no')
+  ```python
+  if __name__ == "__main__":
+      log_1.critical('hi')
+      log_1.critical('hello')
+      log_1.critical('ao')
+      log_2.critical('no')
+  ```
 
-#### [Format](https://docs.python.org/zh-tw/3/library/logging.html#logrecord-attributes)
+<br />
 
+#### 1.2.5. [Format](https://docs.python.org/zh-tw/3/library/logging.html#logrecord-attributes)
 
+<br />
 
-## Loguru
+## 2. Loguru
 
-### Basic usage
+### 2.1. Basic usage
 
-    logger.error('error')
+  ```python
+  logger.error('error')
+  ```
 
-### Advanced usage
-#### use add to do logging handler, formatter, filter
+<br />
 
-    test = logger.add(sys.stderr/file_{time}.log/, format="{time} {level} {message}", filter="my_module", level="INFO")
+### 2.2. Advanced usage
 
-#### remove handler
+#### 2.2.1. use add to do logging handler, formatter, filter
 
-    logger.remove(test)
+  ```python
+  test = logger.add(sys.stderr/file_{time}.log/, format="{time} {level} {message}", filter="my_module", level="INFO")
+  ```
+
+<br />
+
+#### 2.2.2. remove handler
+
+  ```python
+  logger.remove(test)
+  ```
 
 
 

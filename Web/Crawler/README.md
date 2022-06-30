@@ -1,15 +1,11 @@
 <!-- omit in toc -->
-
 # Introduction
-Take note of how to crawler websites
+How to crawler websites by Python?
 
 <br />
 
 <!-- omit in toc -->
-
 # Table of Contents
-- [Introduction](#introduction)
-- [Table of Contents](#table-of-contents)
 - [Fundamental Concepts](#fundamental-concepts)
   - [1. Chrome - DevTools](#1-chrome---devtools)
   - [2. Website](#2-website)
@@ -79,24 +75,32 @@ Take note of how to crawler websites
 ## 1. request
 
 
-
+<br />
 
 # Commands
 
-    res.json().get("aaData", "")
+  ```python
+  res.json().get("aaData", "")
 
-    if status code is less than 400
-        request.get().ok
+  if status code is less than 400
+      request.get().ok
 
-    response.raise_for_status()
+  response.raise_for_status()
+  ```
+
+<br />
 
 ### 1. revise encoding
-    response.content.decode
+  ```python
+  response.content.decode
+  ```
 
-
+<br />
 
 ### 2. urlretrieve
 * Copy a network object denoted by a URL to a local file.
+
+<br />
 
 ### 3. [session vs get](https://stackoverflow.com/questions/65575601/python-requests-get-vs-session-get)
 * session:
@@ -107,6 +111,8 @@ Take note of how to crawler websites
   * only want to fetch a single Item
   * no need for cookies to be persistent
   * no need to login
+
+<br />
 
 # Questions
 1. When to use beautiful soup

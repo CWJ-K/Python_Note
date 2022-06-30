@@ -5,11 +5,29 @@ WIP
 
 <!-- omit in toc -->
 # Table of Contents
+- [Packages](#packages)
+  - [1. click](#1-click)
+- [Commands](#commands)
+  - [1. click.command()](#1-clickcommand)
+  - [2. click.option()](#2-clickoption)
 
-# [click](https://click.palletsprojects.com/en/8.1.x/)
+<br />
+
+
+# Packages
+
+## 1. [click](https://click.palletsprojects.com/en/8.1.x/)
 * handle parsing and validating arguments from CLI commands
-## click.command()
+  
+<br />
+
+# Commands 
+
+## 1. click.command()
 * convert functions to be executed with arguments in CLI command
-## click.option()
+
+<br />
+
+## 2. click.option()
 * tell the click library which arguments to be accepted and what types of values are accepted
    

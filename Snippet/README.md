@@ -15,8 +15,10 @@ Take note of some tips to solve problems.
 - [Connection](#connection)
   - [1. make sure connections are closed even if error occurs](#1-make-sure-connections-are-closed-even-if-error-occurs)
 - [Pandas](#pandas)
-- [new columns from aggregation can be used by loc at the same time via referencing data as df](#new-columns-from-aggregation-can-be-used-by-loc-at-the-same-time-via-referencing-data-as-df)
+  - [new columns from aggregation can be used by loc at the same time via referencing data as df](#new-columns-from-aggregation-can-be-used-by-loc-at-the-same-time-via-referencing-data-as-df)
 - [Callable as arguments in functions/class](#callable-as-arguments-in-functionsclass)
+
+<br />
 
 # Customize string format by two variables
 
@@ -50,6 +52,7 @@ Take note of some tips to solve problems.
 
 ```
 
+<br />
 
 # join
 
@@ -60,6 +63,8 @@ Take note of some tips to solve problems.
     print(text)
 
 ```
+
+<br />
 
 # [how to write converters to translate variables](https://github.com/PyMySQL/PyMySQL/blob/main/pymysql/converters.py)
 * pymysql/converters.py
@@ -83,16 +88,22 @@ Take note of some tips to solve problems.
 
 ```
 
+<br />
+
 # check if the type of variable is the same as a specific type
 
 ```python
     isinstance(sql, list)
 ```
 
+<br />
+
 # double kwargs at the same time
 response = session.get(
             url, params={**params, **{"offset": offset, "limit": batch_size}}
         )
+
+<br />
 
 # use two pointers and avoid stopping at the first case - all equal to zero 
 ```python
@@ -105,13 +116,17 @@ response = session.get(
 
 ```
 
+<br />
+
 # Connection
 
 ## 1. make sure connections are closed even if error occurs
 
+<br />
 
 # Pandas
-# new columns from aggregation can be used by loc at the same time via referencing data as df
+
+## new columns from aggregation can be used by loc at the same time via referencing data as df
 ```python
 ranking = (
         ratings.groupby("movieId")
@@ -123,6 +138,8 @@ ranking = (
         .sort_values(["avg_rating", "num_ratings"], ascending=False)
     )
 ```
+
+<br />
 
 # Callable as arguments in functions/class
 > from Airflow Example

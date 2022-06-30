@@ -1,28 +1,37 @@
 <!-- omit in toc -->
 # Introduction
-Take note of different methods of string representation.
+How to use different methods of string representation in Python?
 
 <br />
 
 <!-- omit in toc -->
 # Table of Contents
-- [f-string](#f-string)
-- [format](#format)
+- [Methods](#methods)
+  - [f-string](#f-string)
+  - [format](#format)
 
+<br />
 
-
-# f-string
+# Methods
+## f-string
 * f-string expression part cannot include a [backslash](https://www.python.org/dev/peps/pep-0498/#escape-sequences)
 
-    f'{\n}'
+  ```python
+  f'{\n}'
+  ```
 
-  * assign \ to other variable
+  * assign \ to other variables
 
-        n = '\n'
-        f'{n}'
+  ```python
+  n = '\n'
+  f'{n}'
+  ```
 
+<br />
 
-# format
+## format
 * [backslash](https://stackoverflow.com/a/44780840)
 
-    '{}'.format('\n')
+  ```python
+  '{}'.format('\n')
+  ```

@@ -1,24 +1,24 @@
 <!-- omit in toc -->
 # Introduction
-Take note of Python API
+How to build a Python API?
 
 <br />
 
 <!-- omit in toc -->
 # Table of Contents
 - [Fundamental Concepts](#fundamental-concepts)
-  - [WSGI (Web Server Gateway Interface)](#wsgi-web-server-gateway-interface)
-  - [ASGI (Asynchronous Server Gateway Interface)](#asgi-asynchronous-server-gateway-interface)
+  - [1. WSGI (Web Server Gateway Interface)](#1-wsgi-web-server-gateway-interface)
+  - [2. ASGI (Asynchronous Server Gateway Interface)](#2-asgi-asynchronous-server-gateway-interface)
 - [Package](#package)
-  - [PyJWT](#pyjwt)
-  - [uvicorn](#uvicorn)
-  - [Swagger](#swagger)
+  - [1. PyJWT](#1-pyjwt)
+  - [2. uvicorn](#2-uvicorn)
+  - [3. Swagger](#3-swagger)
 - [Commands](#commands)
-  - [Install FastAPI](#install-fastapi)
-  - [FlaskAPI](#flaskapi)
-    - [create an instance of this class](#create-an-instance-of-this-class)
-    - [to register a view function for a given URL rule](#to-register-a-view-function-for-a-given-url-rule)
-    - [run the flask application](#run-the-flask-application)
+  - [1. Install FastAPI](#1-install-fastapi)
+  - [2. FlaskAPI](#2-flaskapi)
+    - [2.1. create an instance of this class](#21-create-an-instance-of-this-class)
+    - [2.2. to register a view function for a given URL rule](#22-to-register-a-view-function-for-a-given-url-rule)
+    - [2.3. run the flask application](#23-run-the-flask-application)
 - [Flask Issue: cannot import name 'escape' from 'jinja2'](#flask-issue-cannot-import-name-escape-from-jinja2)
 
 
@@ -26,13 +26,14 @@ Take note of Python API
 
 # Fundamental Concepts
 
-## WSGI (Web Server Gateway Interface)
+## 1. WSGI (Web Server Gateway Interface)
 * **WSGI server** means servers following WSFI rules. e.g. gunicorn, uwsgi 
 * to provide the interface between Python web application and web server
 * provided a standard for **synchronous** Python apps
 
+<br />
 
-## ASGI (Asynchronous Server Gateway Interface)
+## 2. ASGI (Asynchronous Server Gateway Interface)
 * a spiritual successor to WSGI
 * provides one for both **asynchronous** and synchronous apps
 
@@ -40,52 +41,63 @@ Take note of Python API
 
 # Package
 
-## PyJWT
+## 1. PyJWT
 * to encode and decode JSON Web Tokens (JWT)
 
 <br />
 
-## uvicorn
+## 2. uvicorn
 * an ASGI web server implementation for Python
 
 <br />
 
-## Swagger
+## 3. Swagger
 * Auto-generate documentation from an API definition
 * http://host:port/docs
 
 <br />
 
 # Commands
-## Install FastAPI
 
-    pipenv install fastapi==version
+## 1. Install FastAPI
 
+  ```sh
+  pipenv install fastapi==version
+  ```
 
-## FlaskAPI
+<br />
 
-### create an instance of this class
-    app = Flask(__name__)
+## 2. FlaskAPI
 
+### 2.1. create an instance of this class
+  ```python
+  app = Flask(__name__)
+  ```
 
-### to register a view function for a given URL rule
+<br />
 
-    # 'Hello world' will be printed when triggering "host+port:/" on the website
+### 2.2. to register a view function for a given URL rule
 
-    @app.route('/', methods=['GET'])
-    def index():
-        return 'Hello World'
+  ```python
+  # 'Hello world' will be printed when triggering "host+port:/" on the website
+
+  @app.route('/', methods=['GET'])
+  def index():
+      return 'Hello World'
+  ```
     
 
 * default_config = {'APPLICATION_ROOT': '/', ...}
 
 
-### run the flask application
+### 2.3. run the flask application
 Runs the application on a **local development server**.
 * Do not use run() in a **production** setting. It is not intended to meet **security** and **performance requirements** for a production server
 * 
-        # Running on http://0.0.0.0:8888/
-        app.run(host='0.0.0.0', port=8888)
+  ```python
+  # Running on http://0.0.0.0:8888/
+  app.run(host='0.0.0.0', port=8888)
+  ```
 
   *  0.0.0.0 <br /> all IPv4 addresses on the local machine. This ensures that the server will be reachable from all addresses
 
@@ -93,6 +105,6 @@ Runs the application on a **local development server**.
 # Flask Issue: cannot import name 'escape' from 'jinja2'
 > Flask 1.X.X uses jinja with escape module. However, new version of jinja2 does not support escape. Therefore, update the version of Flask where jinja does not use escape module 
 
-``` linux
+```s
   Flask==2.1.0
 ```
