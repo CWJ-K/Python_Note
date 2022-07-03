@@ -14,6 +14,10 @@ TODO
   - [6. underline](#6-underline)
   - [7. yield](#7-yield)
   - [8. wrapper](#8-wrapper)
+  - [Inheritance](#inheritance)
+    - [instance method](#instance-method)
+    - [Class method](#class-method)
+    - [Static method](#static-method)
 - [Packages](#packages)
   - [1. importlib](#1-importlib)
   - [2. getattr](#2-getattr)
@@ -84,6 +88,47 @@ https://zh-blog.logan.tw/2019/03/30/python3-intro-to-yield-from-expr/
 ## 8. wrapper
 [@apply_defaults](https://airflow.apache.org/docs/apache-airflow/stable/_modules/airflow/models/baseoperator.html#BaseOperator)
   @functools.wraps(func)
+
+<br />
+
+## Inheritance
+### instance method
+* argument = self
+
+```python
+class Student:
+  def __init__(self):
+    ...
+  
+  def average(self):
+    ...
+```
+
+<br />
+
+### Class method
+* if using two classes, functions will not cover the original classes 
+
+```python
+class Foo:
+    @classmethod
+    def hi(cls):
+      ...
+```
+
+<br />
+
+### Static method
+* directly using the function
+* it is commonly used to tell people that the function will not be inherited
+
+```python
+class Foo:
+    @staticmethod
+    def hi(cls):
+      ...
+```
+
 
 <br />
 
