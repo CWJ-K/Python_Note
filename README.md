@@ -31,9 +31,9 @@ docker-compose.yml creates jupyter notebook for code practice.
   * Scheduler
 * Data
   * Database
+  * Data Processing
     * Read Files
     * Validate Data
-  * Data Processing
 * Journal
   * Logs
   * Debugger
