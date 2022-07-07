@@ -144,7 +144,7 @@ flowchart TB
 > a single process = sequential part + parallelized part
   * because the sequential part is required: copy data or code across different processors
 
-* even if tasks are fully parallelized, there is diminishing returns in the speed of execution time as the number of processors increases
+* even if tasks are fully parallelized, there are diminishing returns in the speed of execution time as the number of processors increases
 * Gustafson's law
 
 <br />

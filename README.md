@@ -44,6 +44,9 @@ docker-compose.yml creates jupyter notebook for code practice.
   * Crawler
   * API
 * Snippet
+* Distributed Computing
+  * Asynchronous
+  * Celery
 
 <br />
 
