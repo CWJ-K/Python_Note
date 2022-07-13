@@ -24,6 +24,7 @@ TODO
 - [Commands](#commands)
   - [1. getattr](#1-getattr)
   - [2. inheritance from class](#2-inheritance-from-class)
+  - [Lambda](#lambda)
 
 <br />
 
@@ -180,6 +181,19 @@ class ChildB(Base):
 
 * Base.__init__(self) is not recommended
   >  can not use multiple inheritance since the next parent's call is hard coded
+
+
+## Lambda
+* same as functions
+  ```python
+    '''
+    def test(x):
+        return x + 1
+    '''
+    test = lambda x: x + 1
+
+    value = test(number)
+  ```
 
 
 

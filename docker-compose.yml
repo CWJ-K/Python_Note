@@ -5,3 +5,5 @@ services:
     ports:
       - 8888:8888
     container_name: jupyter_notebook
+    volumes:
+      - ./:/home/jovyan/work/

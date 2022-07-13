@@ -16,7 +16,6 @@ How to program in asynchronous?
   - [Iterator](#iterator)
   - [generator](#generator-1)
   - [coroutine](#coroutine)
-- [Asynchronous example](#asynchronous-example)
 
 <br />
 
@@ -198,6 +197,3 @@ def complain_about(content):
 
 
 * annoying `next()` can be wrapped, so coroutine can be directly used without calling `next()` first
-
-
-# Asynchronous example
