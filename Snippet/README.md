@@ -7,6 +7,7 @@ Take note of some tips to solve problems.
 <!-- omit in toc -->
 # Table of Contents
 - [Customize string format by two variables](#customize-string-format-by-two-variables)
+  - [use format lately](#use-format-lately)
 - [join](#join)
 - [how to write converters to translate variables](#how-to-write-converters-to-translate-variables)
 - [check if the type of variable is the same as a specific type](#check-if-the-type-of-variable-is-the-same-as-a-specific-type)
@@ -49,6 +50,17 @@ Take note of some tips to solve problems.
             update_sql # = `StockID` = "0050" , `TradeVolume` = "18437079"
         )
     )
+
+```
+
+<br />
+
+## use format lately 
+```python
+URL = 'http://finance.yahoo.com/d/quotes.csv?s={}=X&f=p'
+
+with urllib.request.urlopen(url_tmplt.format(pair)) as res:
+    ...
 
 ```
 

@@ -17,6 +17,8 @@ How to crawler websites by Python?
     - [2. urlretrieve](#2-urlretrieve)
     - [3. session vs get](#3-session-vs-get)
 - [Questions](#questions)
+- [Reference](#reference)
+  - [URL parameters](#url-parameters)
 
 <br />
 
@@ -117,3 +119,8 @@ How to crawler websites by Python?
 # Questions
 1. When to use beautiful soup
 2. record steps of different types of files/websites
+
+
+# Reference
+## URL parameters
+https://www.semrush.com/blog/url-parameters/
