@@ -18,6 +18,7 @@ Take note of some tips to solve problems.
 - [Pandas](#pandas)
   - [new columns from aggregation can be used by loc at the same time via referencing data as df](#new-columns-from-aggregation-can-be-used-by-loc-at-the-same-time-via-referencing-data-as-df)
 - [Callable as arguments in functions/class](#callable-as-arguments-in-functionsclass)
+- [map with input list](#map-with-input-list)
 
 <br />
 
@@ -160,3 +161,16 @@ ranking = (
     self._pandas_read_callable = pd.read_csv
     self._pandas_read_callable(obj, **self._read_callable_kwargs)
 ```
+
+# map with input list
+* execute the function on each item of the input list
+
+
+```python
+    # for i in input_list ([34, 34, 34, 34, ..])
+    #    fib(i)
+
+    with cf.ProcessPoolExecutor(max_workers=args.n) as pool:
+        results = pool.map(fib, [args.number] * args.n)
+
+``` 
