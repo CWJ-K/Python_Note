@@ -9,22 +9,15 @@ TODO
   - [1. PATH](#1-path)
   - [2. Dynamic Imports](#2-dynamic-imports)
   - [3. property](#3-property)
-  - [4. init](#4-init)
   - [5. *](#5-)
   - [6. underline](#6-underline)
-  - [7. yield](#7-yield)
-  - [8. wrapper](#8-wrapper)
-  - [Inheritance](#inheritance)
-    - [instance method](#instance-method)
-    - [Class method](#class-method)
-    - [Static method](#static-method)
+  - [7. wrapper](#7-wrapper)
 - [Packages](#packages)
   - [1. importlib](#1-importlib)
   - [2. getattr](#2-getattr)
 - [Commands](#commands)
   - [1. getattr](#1-getattr)
-  - [2. inheritance from class](#2-inheritance-from-class)
-  - [Lambda](#lambda)
+  - [3. Lambda](#3-lambda)
 
 <br />
 
@@ -49,10 +42,6 @@ https://www.initialyze.com/blog/2020/11/what-are-dynamic-imports-and-how-to-use-
 ## 3. property
 class.__dict__
 func.__name__
-
-<br />
-
-## 4. init
 
 <br />
 
@@ -81,57 +70,13 @@ https://medium.com/python-language/python-tricks-%E5%BA%95%E7%B7%9A%E5%AE%B6%E6%
 
 <br />
 
-## 7. yield
-https://zh-blog.logan.tw/2019/03/30/python3-intro-to-yield-from-expr/
-
-<br />
-
-## 8. wrapper
+## 7. wrapper
 [@apply_defaults](https://airflow.apache.org/docs/apache-airflow/stable/_modules/airflow/models/baseoperator.html#BaseOperator)
   @functools.wraps(func)
 
 <br />
 
-## Inheritance
-### instance method
-* argument = self
 
-```python
-class Student:
-  def __init__(self):
-    ...
-  
-  def average(self):
-    ...
-```
-
-<br />
-
-### Class method
-* if using two classes, functions will not cover the original classes 
-
-```python
-class Foo:
-    @classmethod
-    def hi(cls):
-      ...
-```
-
-<br />
-
-### Static method
-* directly using the function
-* it is commonly used to tell people that the function will not be inherited
-
-```python
-class Foo:
-    @staticmethod
-    def hi(cls):
-      ...
-```
-
-
-<br />
 
 # Packages
 
@@ -166,24 +111,8 @@ class Foo:
 
 <br />
 
-## 2. [inheritance from class](https://stackoverflow.com/a/27134600)
-```python
-class ChildA(Base):
-    def __init__(self):
-        Base.__init__(self)
-        
-class ChildB(Base):
-    def __init__(self):
-        super(ChildB, self).__init__()
-```
-* super().__init__() = super(ChildB, self).__init__()
-  > Python2, inheritance is required like `super(ChildB, self).__init__()`
 
-* Base.__init__(self) is not recommended
-  >  can not use multiple inheritance since the next parent's call is hard coded
-
-
-## Lambda
+## 3. Lambda
 * same as functions
   ```python
     '''
