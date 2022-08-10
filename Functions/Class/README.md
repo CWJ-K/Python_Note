@@ -6,11 +6,13 @@
 <!-- omit in toc -->
 # Table of Contents
 - [Fundamental Concepts](#fundamental-concepts)
+  - [Terminal](#terminal)
   - [1. Inheritance](#1-inheritance)
     - [1.1. instance method](#11-instance-method)
     - [1.2. Class method](#12-class-method)
     - [1.3. Static method](#13-static-method)
-    - [1.4. Inheritance from Classes](#14-inheritance-from-classes)
+    - [1.4. Class Inheritance](#14-class-inheritance)
+- [Multiple Inheritance](#multiple-inheritance)
 - [Packages](#packages)
 - [Commands](#commands)
   - [Magic Methods](#magic-methods)
@@ -21,6 +23,9 @@
 <br />
 
 # Fundamental Concepts
+## Terminal
+* function > class > method
+
 
 ## 1. Inheritance
 
@@ -63,21 +68,70 @@ class Foo:
 
 <br />
 
-### 1.4. [Inheritance from Classes](https://stackoverflow.com/a/27134600)
+### 1.4. [Class Inheritance](https://stackoverflow.com/a/27134600)
 ```python
 class ChildA(Base):
     def __init__(self):
         Base.__init__(self)
-        
+  
+    def f(self):
+      return 'A'
+
 class ChildB(Base):
     def __init__(self):
         super(ChildB, self).__init__()
+
+    def f(self):
+      parent_result = super().f()
+
+      
 ```
 * super().__init__() = super(ChildB, self).__init__()
   > Python2, inheritance is required like `super(ChildB, self).__init__()`
 
 * Base.__init__(self) is not recommended
   >  can not use multiple inheritance since the next parent's call is hard coded
+
+<br />
+
+# Multiple Inheritance
+* commonly used in mixins
+
+```python
+  class A:
+    def f(self):
+      return 'A'
+
+  class B:
+    def g(self):
+      return 'B'
+
+  # Now, child can call both f and g methods
+  class child(A, B):
+    pass
+
+```
+* if a class inherits multiple classes with the same method names, `Method Resolution Order`(MRO) is considered
+    * consider the first matching method following the order of the parent classes
+      ```python
+      # See the order
+        child_class.mro()
+      
+      ```
+  ```python
+  class A:
+    def f(self):
+      return 'A'
+
+  class B:
+    def f(self):
+      return 'B'
+
+  # call f from class A
+  class child(A, B):
+    pass
+  ```
+
 
 <br />
 
