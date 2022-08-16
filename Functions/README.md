@@ -7,6 +7,10 @@ TODO
 # Table of Contents
 - [Fundamental Concepts](#fundamental-concepts)
   - [1. PATH](#1-path)
+    - [absolute path](#absolute-path)
+    - [relative path](#relative-path)
+      - [Relative Path in Packages](#relative-path-in-packages)
+    - [definition](#definition)
   - [2. Dynamic Imports](#2-dynamic-imports)
   - [3. property](#3-property)
   - [5. *](#5-)
@@ -23,13 +27,63 @@ TODO
 
 # Fundamental Concepts
 
-## 1. PATH
-https://carsonwah.github.io/15213187969322.html
+## 1. [PATH](https://carsonwah.github.io/15213187969322.html)
+* modules: python scripts
+* packages: a collection of modules
+* `__init__.py` makes python scripts as modules
+### absolute path
+    . 
+    |__file_a.py 
+    |__file_b.py 
 
-.module
-module
+* modules can use the absolute path to read other modules
+  * in `files_a.py`: `from file_b import methods`
+* absolute path requires all paths to be unique name
+  * since it reads paths via `sys.path`
 
-can not import module
+### relative path
+    
+    Method 1:
+    . 
+    |__file_a.py 
+    |__file_b.py 
+
+    Method 2:
+        . 
+        |__file_a.py 
+        |__file_b.py 
+          |_ __init__.py
+    
+  * Method 1: in `file_a.py`: `from .file_b import hello`
+  * Method 2: in `file_b.py`: `from ..file_a import hello`
+  > can not execute `python file_a.py or file_b.py` <br />
+  > should run relative import in **packages**
+
+#### Relative Path in Packages
+    . 
+      |__main.py 
+      |__modules 
+        |_ __init__.py
+        |_ file_a.py
+        |_ file_b.py
+
+
+* set current directory is the location of `main.py`
+* should use a `main.py` to call file_a.py
+  1. in `main.py`: `from modules import file_a`
+  2. in `file_a` and `file_b`, relative path are used
+* can not directly run the module in the package
+  
+<br />
+
+        
+
+### definition
+* when calling `main.py`, the results of the functions of `file_a` imported by `main.py` are **automatically executed**
+* avoid this issues through `if __name__ == '__main__'`
+* commonly used for debug 
+
+
 
 <br />
 
