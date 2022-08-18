@@ -11,6 +11,7 @@ TODO
     - [relative path](#relative-path)
       - [Relative Path in Packages](#relative-path-in-packages)
     - [definition](#definition)
+    - [Call scripts in terminal](#call-scripts-in-terminal)
   - [2. Dynamic Imports](#2-dynamic-imports)
   - [3. property](#3-property)
   - [5. *](#5-)
@@ -83,6 +84,44 @@ TODO
 * avoid this issues through `if __name__ == '__main__'`
 * commonly used for debug 
 
+
+### [Call scripts in terminal](https://medium.com/pyladies-taiwan/python-%E7%9A%84-import-%E9%99%B7%E9%98%B1-3538e74f57e3)
+    . 
+      |__main.py 
+      |__modules 
+        |_ __init__.py
+        |_ file_a.py
+        |_ file_b.py
+  
+  * Two Methods (at the directory of `main.py`)
+    1. `python3 modules/file_a.py`  
+       > call a script
+    2. `python3 -m modules.file_a`    
+       > call a module (dotted path is the same as the path to import modules in scripts)
+  
+    * Three import paths (at `file_a.py`)
+      1. `from file_b import functions` => absolute path
+
+        |Status|Call Methods|Reason|
+        |:---:|:---:|:---:|
+        |Success|`python3 modules/file_a.py`|as `file_a.py` to call modules with absolute path|
+        |Fail|`python3 -m modules.file_a`|at the directory of `main.py`, call modules. the absolute path of `file_b` can not be found|
+      
+      2. `from .modules import file_b` => relative path
+   
+        |Status|Call Methods|Reason|
+        |:---:|:---:|:---:|
+        |Fail|`python3 modules/file_a.py`|as `file_a.py`, there is no `modules` in the same directory|
+        |Success|`python3 -m modules.file_a`|for the directory of `main.py`, the relative path of `modules` can be found|
+
+      3. `from modules.file_b import functions` => absolute path
+
+        |Status|Call Methods|Reason|
+        |:---:|:---:|:---:|
+        |Fail|`python3 modules/file_a.py`|as `file_a.py`, there is no `modules` in the same directory|
+        |Success|`python3 -m modules.file_a`|for the directory of `main.py`, the absolute path of `modules` can be found|
+  
+  
 
 
 <br />
