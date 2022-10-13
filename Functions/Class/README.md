@@ -6,30 +6,32 @@
 <!-- omit in toc -->
 # Table of Contents
 - [Fundamental Concepts](#fundamental-concepts)
-  - [Terminal](#terminal)
-  - [1. Inheritance](#1-inheritance)
-    - [1.1. instance method](#11-instance-method)
-    - [1.2. Class method](#12-class-method)
-    - [1.3. Static method](#13-static-method)
-    - [1.4. Class Inheritance](#14-class-inheritance)
+  - [1. Terminal](#1-terminal)
+  - [2. Inheritance](#2-inheritance)
+    - [2.1. instance method](#21-instance-method)
+    - [2.2. Class method](#22-class-method)
+    - [2.3. Static method](#23-static-method)
+    - [2.4. Class Inheritance](#24-class-inheritance)
 - [Multiple Inheritance](#multiple-inheritance)
 - [Packages](#packages)
 - [Commands](#commands)
-  - [Magic Methods](#magic-methods)
-    - [Object Representations: `__repr__`, `__str__`](#object-representations-__repr__-__str__)
-    - [Comparison Methods: `__eq__`, `__gt__`, `__it__`](#comparison-methods-__eq__-__gt__-__it__)
-    - [Callable Object: `__call__` (TODO)](#callable-object-__call__-todo)
+  - [1. Magic Methods](#1-magic-methods)
+    - [1.1. Object Representations: `__repr__`, `__str__`](#11-object-representations-__repr__-__str__)
+    - [1.2. Comparison Methods: `__eq__`, `__gt__`, `__it__`](#12-comparison-methods-__eq__-__gt__-__it__)
+    - [1.3. Callable Object: `__call__` (TODO)](#13-callable-object-__call__-todo)
+  - [Enum](#enum)
 
 <br />
 
 # Fundamental Concepts
-## Terminal
+
+## 1. Terminal
 * function > class > method
 
 
-## 1. Inheritance
+## 2. Inheritance
 
-### 1.1. instance method
+### 2.1. instance method
 * argument = self
 
 ```python
@@ -43,7 +45,7 @@ class Student:
 
 <br />
 
-### 1.2. Class method
+### 2.2. Class method
 * if using two classes, functions will not cover the original classes 
 
 ```python
@@ -55,7 +57,7 @@ class Foo:
 
 <br />
 
-### 1.3. Static method
+### 2.3. Static method
 * directly using the function
 * it is commonly used to tell people that the function will not be inherited
 
@@ -68,7 +70,7 @@ class Foo:
 
 <br />
 
-### 1.4. [Class Inheritance](https://stackoverflow.com/a/27134600)
+### 2.4. [Class Inheritance](https://stackoverflow.com/a/27134600)
 ```python
 class ChildA(Base):
     def __init__(self):
@@ -140,8 +142,10 @@ class ChildB(Base):
 <br />
 
 # Commands 
-## Magic Methods
-### Object Representations: `__repr__`, `__str__`
+
+## 1. Magic Methods
+
+### 1.1. Object Representations: `__repr__`, `__str__`
 * `repr` for software engineers
 * `str`: change the results of `print`
 ```python
@@ -164,11 +168,11 @@ class ChildB(Base):
 
 ```
 
-### Comparison Methods: `__eq__`, `__gt__`, `__it__`
+### 1.2. Comparison Methods: `__eq__`, `__gt__`, `__it__`
 * useful when there are different units
 * TODO
 
-### Callable Object: `__call__` (TODO)
+### 1.3. Callable Object: `__call__` (TODO)
 * call object instance like a regular function
 ```python
     class Counter:
@@ -186,4 +190,17 @@ class ChildB(Base):
     c(10)
     print(c.counter)  # 11
 
+```
+
+## Enum
+* a way to list all valid values for a specific kind of data
+* inherit from `str` type (depend on users) and `Enum` class
+
+```python
+  from enum import Enum
+
+
+  class UserType(str, Enum):
+    STANDARD = 'standard'
+    ADMIN = 'admin'
 ```

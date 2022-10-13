@@ -1,20 +1,36 @@
 <!-- omit in toc -->
 # Introduction
+List all typing hints 
 
 <br />
 
 <!-- omit in toc -->
 # Table of Contents
+- [Fundamental Concepts](#fundamental-concepts)
+  - [1. type annotations in Python](#1-type-annotations-in-python)
+- [Packages](#packages)
+  - [1. mypy](#1-mypy)
+  - [2. typing](#2-typing)
+    - [2.1. Data structure](#21-data-structure)
+    - [2.2. list with elements of different types](#22-list-with-elements-of-different-types)
+    - [2.3. None in parameters](#23-none-in-parameters)
+    - [2.4. Complex types](#24-complex-types)
+    - [2.5. classes](#25-classes)
+    - [2.6. type function signatures with callable](#26-type-function-signatures-with-callable)
+    - [2.7. values can be anything](#27-values-can-be-anything)
+- [Commands](#commands)
 
 <br />
 
 # Fundamental Concepts
-## type annotations in Python
+
+## 1. type annotations in Python
 * type annotations are optional and ignored by the interpreter
 <br />
 
 # Packages
-## mypy
+
+## 1. mypy
 * static-type checkers
 * check if the type hinting is correct on the script
   ```s
@@ -25,10 +41,10 @@
   ```
 * it integrates with IDE
 
-## typing
+## 2. typing
 > type[class/None/...]
 
-* Data structure
+### 2.1. Data structure
   ```python
   from typing import Dict, List, Set, Tuple
   
@@ -38,14 +54,16 @@
   d: Dict[str, int] = {'a': 1, 'b': 2, 'c': 3}
   
   ```
-* list with elements of different types
+
+### 2.2. list with elements of different types
   ```python
   from typing import List, Union
 
   l: List[Union[int, float]] = [1, 2.5, 3.14, 5]
   
   ```
-* None in parameters
+
+### 2.3. None in parameters
   * Method 1
   ```python
   from typing import Union
@@ -62,7 +80,7 @@
   
   ```
 
-* Complex types
+### 2.4. Complex types
   ```python
   from typing import Tuple
 
@@ -71,7 +89,7 @@
   t: IntStringFloatTuple = (1, 'hello', 3.14)
   ```
 
-* classes
+### 2.5. classes
   ```python 
     from typing import List
 
@@ -85,9 +103,10 @@
     posts: List[Post] = [Post('hi'), Post('hello')]
   ```
 
-* type function signatures with callable
+### 2.6. type function signatures with callable
   * pass a function as arguments
     > `...` implies any number of arguments
+
     ```python
     from typing import Callable, List
 
@@ -104,7 +123,7 @@
 
     ```
 
-* values can be anything
+### 2.7. values can be anything
   * `Any`: any values
   * `cast`: force the type check to consider the type you specify
     > only for type checkers; may be useful for unit test
